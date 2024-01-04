@@ -1,0 +1,41 @@
+開発環境構築でやったこと
+・homebrew インストール
+・gitインストール
+・docker for Mac インストール
+　・dockerファイル設置
+　　git clone https://github.com/kino-code/docker-python C:\\Users\\masachikayamamoto\\Documents\\docker-python
+　・docker exec -it docker-python /bin/bash
+　・
+
+
+
+m.yamamoto.0312@eos.ocn.ne.jp
+a62othha@one.ocn.ne.jp
+
+・/Users/masachikayamamoto/Documents/docker-python/Dockerfile
+
+
+・ssh key generate
+ssh-keygen -t ed25519 -C “m.yamamoto.0312@gamil.com“
+
+
+dquote>
+となる。
+Control + g で抜ける
+
+pbcopy < ~/.ssh/id_ed25519.pub
+
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGgdnC5klJNXTb2/3wmuGferwIGxAFdIt86BeqxmIZ1z “m.yamamoto.0312@gamil.com“
+
+echo "# memo" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:masachika-yamamoto/memo.git
+git push -u origin main
+
+
+git config --global user.name “masachika yamamoto”
+git config --global user.email m.yamamoto.0312@gmail.com
+
