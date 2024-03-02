@@ -39,3 +39,10 @@ git push -u origin main
 git config --global user.name “masachika yamamoto”
 git config --global user.email m.yamamoto.0312@gmail.com
 
+
+
+
+ffmpeg -i /mnt/d/Files/movie/999_others/WPB_51_YUNO_OHARA.ISO -vcodec cinepak -acodec mp3 -aspect 4:3 -sn /mnt/d/Files/movie/999_others/WPB_51_YUNO_OHARA.mp4
+
+
+ffmpeg -i  
