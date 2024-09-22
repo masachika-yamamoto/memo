@@ -46,3 +46,51 @@ ffmpeg -i /mnt/d/Files/movie/999_others/WPB_51_YUNO_OHARA.ISO -vcodec cinepak -a
 
 
 ffmpeg -i  
+
+----------------------------------------------------------------------
+
+実施詳細
+.bashrc修正
+下記コマンドを実行して.bashrcファイルを開く。
+  $ cd
+  $ vim .bashrc
+下記内容を開いた.bashrcファイルに記載する。
+  alias ll='ls -laF'
+保存して閉じる。
+
+.bash_profile修正
+下記コマンドを実行して.bash_profileファイルを開く。
+
+  $ vim .bash_profile
+下記内容を開いた.bash_profileファイルの最終行に記載する。
+  source ~/.bashrc
+保存して閉じる。
+
+設定の反映
+下記コマンドを実行して設定を反映させる。
+
+  $ source .bash_profile
+
+----------------------------------------------------------------------
+
+
+# 仮想環境の名前を設定
+INSTANCE_NAME="hoge"
+
+# ssh 接続設定用に仮想環境名ディレクトリを切る
+WORKSPACE="${HOME}/.ssh/multipass/${INSTANCE_NAME}"
+mkdir -p "${WORKSPACE}"
+
+# 仮想環境名の鍵生成
+## パスフレーズは空
+ssh-keygen -t ecdsa -b 521 -N "" -f "${WORKSPACE}/${INSTANCE_NAME}"
+
+# config ファイル作成
+touch "${WORKSPACE}/config"
+
+# 公開鍵を仮想環境の authorized_keys に追加
+## 下記コマンドでなくても multipass shell <仮想環境名> でログインして、 authorized_key に直接公開鍵を追加するでも OK
+multipass exec hoge --working-directory "/home/ubuntu/.ssh" -- bash -c "echo '$(cat ${WORKSPACE}/${INSTANCE_NAME}.pub)' | tee -a authorized_keys"
+# multipass exec <仮想環境名> --working-directory <コマンド実行ディレクトリ> -- <実行コマンド>
+
+
