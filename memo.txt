@@ -94,3 +94,78 @@ multipass exec hoge --working-directory "/home/ubuntu/.ssh" -- bash -c "echo '$(
 # multipass exec <仮想環境名> --working-directory <コマンド実行ディレクトリ> -- <実行コマンド>
 
 
+
+
+◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆
+
+ファイル (F) 編集(E) タブ (T) ヘルプ (H)
+<?php
+require_once(_DIR_ . '/config.php');
+use Abraham\Twitter OAuth\TwitterOAuth;
+$connection = new TwitterOAuth (
+CONSUMER_KEY,
+CONSUMER_SECRET_KEY, ACCESS_TOKEN,
+ACCESS_TOKEN_SECRET);
+$url = "https://api.darksky.net/forecast/221cb3c46cdaabad9d99c405209eff41/35.661777,139.704051?lang=ja"; $ch =
+curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$res =
+curl_exec($ch);
+$json = mb_convert_encoding($res, 'UTF8', 'ASCII, JIS, UTF-8, EUC-JP, SJIS-WIN'); $obj = json_decode($json, true);
+$datetime
+=
+date("y-m-d H:i:s", strtotime('+9 hour' , $obj ["currently"]["time"])); $obj ["currently"]["summary"];
+$summary = '30 : '
+$temperature = ' '気温 : getCelsius (intval($obj ["currently"]["temperature"])) . '';
+$apparent Temperature = ': *ERE getCelsius (intval($obj ["currently"]["apparent Temperature"])) . ''; $hashtag = "$datetime \n # #"; $string = $summary "\n" . $temperature . "\n" . $apparent Temperature . "\n\n". $hashtag;
+$res = $connection->post(
+"statuses/update", ['status' => $string]);
+if ($res) {
+echo 'Succes3!' PHP_EOL;
+}else {
+echo "Error!', Sres->errors[0]--message, PHP_EUL;
+function getCelsius ($fahrenheit){
+$celsius = ($fahrenheit - 32)
+return round ($celsius);
+(5 / 9);
+&
+}
+pi@raspbe
+
+◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆
+
+
+p1:
+pi@raspberrypi: S
+pi@raspberrypi:~ $ view bot_php/bot.php pi@raspberrypi: $
+pi@raspberrypi:~ $
+pi@raspberrypi:~$ crontab -1
+# Edit this file to introduce tasks to be run by cron.
+#
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run # and what command to run for the task
+#
+# To define the time you can provide concrete values for # minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').#
+# Notice that tasks will be started based on the cron's system # daemon's notion of time and timezones.
+#
+# Output of the crontab jobs (including errors) is sent through
+I
+# email to the user the crontab file belongs to (unless redirected).
+#
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+#
+# For more information see the manual pages of crontab(5) and cron (8)
+#
+#mh dom mon dow
+*/10 *
+command
+*** wget -q -0 /dev/null http://mydns786722: rHBy8iXNsuX@www.mydns.jp/login.html
+0 */1 *** /usr/bin/php /home/pi/bot_php/bot.php
+pi@raspberrypi:~ $ ||
+
+
+◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆
