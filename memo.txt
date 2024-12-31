@@ -72,7 +72,12 @@ ffmpeg -i
   $ source .bash_profile
 
 ----------------------------------------------------------------------
+https://zenn.dev/numagotatu/articles/2024-04-07-docker-on-multipass
 
+
+
+multipass launch --cpus 2 --memory 2G --disk 10G --name hoge 22.04
+# multipass launch --cpus <割り当てるCPU数> --memory <割り当てるメモリ数[GByte]>G --disk <割り当てるディスクサイズ>G --name <仮想環境名> <イメージタグ>
 
 # 仮想環境の名前を設定
 INSTANCE_NAME="hoge"
@@ -94,9 +99,6 @@ multipass exec hoge --working-directory "/home/ubuntu/.ssh" -- bash -c "echo '$(
 # multipass exec <仮想環境名> --working-directory <コマンド実行ディレクトリ> -- <実行コマンド>
 
 
-
-
-◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆
 
 ファイル (F) 編集(E) タブ (T) ヘルプ (H)
 <?php
@@ -133,9 +135,6 @@ return round ($celsius);
 }
 pi@raspbe
 
-◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆
-
-
 p1:
 pi@raspberrypi: S
 pi@raspberrypi:~ $ view bot_php/bot.php pi@raspberrypi: $
@@ -168,4 +167,52 @@ command
 pi@raspberrypi:~ $ ||
 
 
-◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆
+----------------------------------------------------------------------
+yahoo api
+
+Client ID：
+dj00aiZpPW55ekpCQVNrSmZVciZzPWNvbnN1bWVyc2VjcmV0Jng9NmE-
+
+シークレット：
+S03iL6RrawYm0Zc2Hqo6dpFt78vH7tEJTEAl3gtS
+
+request sample
+https://map.yahooapis.jp/weather/V1/place?coordinates=139.732293,35.663613&appid=dj00aiZpPW55ekpCQVNrSmZVciZzPWNvbnN1bWVyc2VjcmV0Jng9NmE-
+
+Latitude and Longitude
+
+渋谷駅
+緯度: 35.658034 経度: 139.701636
+35.658034,139.70163
+
+https://map.yahooapis.jp/weather/V1/place?coordinates=139.701636,35.658034&appid=dj00aiZpPW55ekpCQVNrSmZVciZzPWNvbnN1bWVyc2VjcmV0Jng9NmE-
+
+岩手飯岡駅
+39.6537526 141.1466648
+https://map.yahooapis.jp/weather/V1/place?coordinates=141.1466648,39.6537526&appid=dj00aiZpPW55ekpCQVNrSmZVciZzPWNvbnN1bWVyc2VjcmV0Jng9NmE-
+
+
+----------------------------------------------------------------------
+https://www.weatherapi.com/docs/#intro-request
+
+346c6509a96342548bc110431242912
+
+渋谷駅
+curl 'https://api.weatherapi.com/v1/current.json?key=346c6509a96342548bc110431242912&q=48.8567,2.3508&aqi=no'
+curl 'http://api.weatherapi.com/v1/forecast.json?key=346c6509a96342548bc110431242912&q=35.658034,139.70163&days=1&aqi=no&alerts=no&lang=ja'
+
+岩手飯岡駅
+39.6537526,141.1466648
+curl 'http://api.weatherapi.com/v1/forecast.json?key=346c6509a96342548bc110431242912&q=39.6537526,141.1466648&days=1&aqi=no&alerts=no&lang=ja'
+curl 'http://api.weatherapi.com/v1/forecast.json?key=346c6509a96342548bc110431242912&q=39.6537526,141.1466648&days=2&aqi=no&alerts=no'
+
+http://api.weatherapi.com/v1/forecast.json?key=346c6509a96342548bc110431242912&q=35.658034,139.70163&days=2&aqi=no&alerts=no
+
+
+sudo killall -HUP mDNSResponder
+
+nslookup api.weatherAapi.com
+nslookup github.com
+
+
+

@@ -1,0 +1,14 @@
+
+インスタンスの確認
+multipass list
+
+インスタンスの開始、終了
+multipass start <instance name>
+multipass stop <instance name>
+
+インスタンスに入る
+multipass shell <instance name>
+
+
+
+
