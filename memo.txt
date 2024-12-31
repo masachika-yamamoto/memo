@@ -215,4 +215,23 @@ nslookup api.weatherAapi.com
 nslookup github.com
 
 
+-----------------------------------------------------------------------------------------------------------------------------
+ubuntu python install 
+https://qiita.com/murakami77/items/b612734ff209cbb22afb
 
+sudo apt update
+sudo apt upgrade -y
+
+sudo apt install -y python3-pip
+
+pip3 -V
+
+multipass mount ~/ubuntu hoge:~/ubuntu
+multipass info hoge
+
+multipass umount hoge
+multipass info hoge
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------
