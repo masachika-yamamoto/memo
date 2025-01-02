@@ -232,6 +232,77 @@ multipass info hoge
 multipass umount hoge
 multipass info hoge
 
+pip install requests
+または
+pip3 install requests
+
+pip freeze | grep -e request
+または
+pip3 freeze | grep -e request
+
+pip3 install tweepy
+
+
+
 
 
 -----------------------------------------------------------------------------------------------------------------------------
+
+Client ID
+NFoyenotb0JLalJtRG50bzlXaW46MTpjaQ
+
+Client Secret
+rJkqw0ChSX8SRj2nizeOFbmqHjvcFCl5uED9gLURgpKFNXnTd5
+
+Comsumer API Key
+xsVwNlnu9Tbo1aDRgICNMC3T6
+
+Comsumer API Secret
+JpgmvD8OEa7qPF0mVjwu6y18cexlILlhvKGOE8ZhJt9gdgz65y
+
+Bearer Token
+AAAAAAAAAAAAAAAAAAAAAMte7wAAAAAAB67lHd1%2FPyZpllbLlUnF%2BHhhOBQ%3DHPuzM1O8FZPrNACsGoztXyXhu0ZSvQSTHLUxbDM9KPm7CKLgQI
+
+Access Token
+972716985342570496-cvumeoorapgTDuJvTtie4tUaocyDG1Z
+
+Access Token Secret
+OlDS5taOCt3tveeWjCZ3jny1g6dCITscqjgZjsuQtlg24
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+空模様 : 薄曇り
+気温 : 25度
+体感温度 : 25度
+
+2022-10-02 18:00:02 
+#渋谷 #天気
+
+0 * * * * /home/backup.sh
+
+10 * * * * python3 /home/ubuntu/ubuntu/tweet_weather.py
+
+-----------------------------------------------------------------------------------------------------------------------------
+aws
+
+ssh -i "./aws_masachika.pem" ubuntu@ec2-13-55-74-1.ap-southeast-2.compute.amazonaws.com
+
+
+python3
+
+wget https://www.python.org/ftp/python/3.12.8/Python-3.12.8.tgz
+
+tar -xvf Python-3.12.8.tgz
+
+./configure
+make
+sudo make install
+
+Ubuntu環境のpip
+https://www.python.jp/install/ubuntu/pip.html#2XQ9V7
+
+sudo apt install python3-pip
+
+
+
+
