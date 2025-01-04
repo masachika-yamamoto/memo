@@ -193,6 +193,7 @@ https://map.yahooapis.jp/weather/V1/place?coordinates=141.1466648,39.6537526&app
 
 
 ----------------------------------------------------------------------
+天気予報　API
 https://www.weatherapi.com/docs/#intro-request
 
 346c6509a96342548bc110431242912
@@ -316,13 +317,14 @@ sudo apt install python3-pip
 amazon linux
 ssh -i "./aws_masachika.pem" ec2-user@ec2-54-252-39-13.ap-southeast-2.compute.amazonaws.com
 
-sudo systemctl daemon-reload
+"/Users/masachikayamamoto/.ssh/aws_masachika.pem"
 
 hachiko.timer
 
 sudo vim /etc/systemd/system/hachiko.service
 sudo vim /etc/systemd/system/hachiko.timer
 
+sudo systemctl daemon-reload
 sudo systemctl enable hachiko.timer
 sudo systemctl start hachiko.timer
 
@@ -355,3 +357,22 @@ tweepy.errors.TooManyRequests: 429 Too Many Requests
 
 *-*-* */3:00:00
 
+
+systemd-analyze calendar "*-*-* 00:00:00"
+systemd-analyze calendar "*-*-* */3:00:00"
+systemd-analyze calendar "*-*-* *:0/5:00"
+systemd-analyze calendar "*-*-* *:0/5:00"
+systemd-analyze calendar "*-*-* */2:00:00"
+systemd-analyze calendar "*-*-* *:*/30:00"
+systemd-analyze calendar "*-*-* *:00:00"
+systemd-analyze calendar "*-*-* 9-17:00:00"
+
+
+
+
+
+systemd-analyze calendar "*-*-* *:0/2:00"
+OnCalendar=*-*-* *:0/3:00
+systemd-analyze calendar "*-*-* *:0/3:00"
+systemd-analyze calendar "*-*-* *:00:00"
+OnCalendar=*-*-* *:00:00
